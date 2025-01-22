@@ -1,17 +1,17 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
-   Name = "Planks Key System",
+   Name = "Pinks Planks",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Pinks Planks loading...",
    LoadingSubtitle = "by Pinkhat",
-   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   Theme = "Ocean", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
    DisableRayfieldPrompts = false,
    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
 
    ConfigurationSaving = {
       Enabled = true,
-      FolderName = nil, -- Create a custom folder for your hub/game
+      FolderName = "PinksPlanks", -- Create a custom folder for your hub/game
       FileName = "Planks"
    },
 
@@ -31,4 +31,15 @@ local Window = Rayfield:CreateWindow({
       GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
       Key = {"https://raw.githubusercontent.com/CHKNPinkhat/Planks/refs/heads/main/Keys.lua"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
+})
+
+local Tab = Window:CreateTab("ESP")
+    local Toggle = Tab:CreateToggle({
+   Name = "ESP",
+   CurrentValue = false,
+   Flag = "ESPToggle", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/CHKNPinkhat/Planks/refs/heads/main/esp.lua'))()
+   _G.ESPToggle = CurrentValue
+   end,
 })
