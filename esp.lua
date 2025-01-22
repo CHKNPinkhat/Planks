@@ -16,27 +16,6 @@ local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 local Workspace = game:GetService("Workspace")
 
--- The following screen gui, frame and button creation may be deleted if you are using a custom GUI library. 
--- Create the screen gui
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "ESPToggleGui"
-screenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
-
--- Create a frame
-local mainFrame = Instance.new("Frame")
-mainFrame.Name = "MainFrame"
-mainFrame.Size = UDim2.new(1, 0, 1, 0) 
-mainFrame.BackgroundTransparency = 1  
-mainFrame.Parent = screenGui
-
--- Create the button
-local toggleButton = Instance.new("TextButton") 
-toggleButton.Name = "ToggleButton"
-toggleButton.Size = UDim2.new(0, 200, 0, 50)
-toggleButton.Position = UDim2.new(0.5, -100, 0.5, -25)
-toggleButton.Text = "Toggle ESP"
-toggleButton.Parent = mainFrame
-
 local function getCharacter(player)
     return Workspace:FindFirstChild(player.Name)
 end
@@ -101,31 +80,5 @@ Players.PlayerRemoving:Connect(function(playerRemoved)
     local character = playerRemoved.Character
     if character then
         removeHighlightFromCharacter(character)
-    end
-end)
-
--- The following code may be deleted if you are using a custom GUI library. 
-
--- Toggle ESP Button Text based on variable status
-toggleButton.MouseButton1Click:Connect(function()
-    _G.ESPToggle = not _G.ESPToggle
-    if _G.ESPToggle then
-        toggleButton.Text = "ESP ON"
-    else
-        toggleButton.Text = "ESP OFF"
-    end
-end)
-
--- Initial button text
-if _G.ESPToggle then
-    toggleButton.Text = "ESP ON"
-else
-    toggleButton.Text = "ESP OFF"
-end
-
--- Keybind to toggle GUI visibility
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if input.KeyCode == Enum.KeyCode.H and not gameProcessed then -- Change Enum.KeyCode.H to another key if you want to, e.g. Enum.KeyCode.P for "P" Key.
-        mainFrame.Visible = not mainFrame.Visible
     end
 end)
