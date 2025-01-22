@@ -7,8 +7,6 @@ local colourTable = {
     Purple = Color3.fromRGB(128, 0, 128)
 }
 local colourChosen = colourTable.Red -- Change "Red" to whatever colour you like from the table above, feel free to add other colours as well.
-_G.ESPToggle = false -- This is the variable used for enabling/disabling ESP. If you are using a GUI library, or your own custom GUI, then set this variable to the callback function. 
-
 -- Services and lp
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
