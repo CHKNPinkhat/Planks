@@ -15,7 +15,6 @@ _G.CircleColor = Color3.fromRGB(255, 255, 255) -- (RGB) Color that the FOV circl
 _G.CircleTransparency = 0.7 -- Transparency of the circle.
 _G.CircleRadius = 80 -- The radius of the circle / FOV.
 _G.CircleFilled = false -- Determines whether or not the circle is filled.
-_G.CircleVisible = true -- Determines whether or not the circle is visible.
 _G.CircleThickness = 0 -- The thickness of the circle.
 
 local FOVCircle = Drawing.new("Circle")
