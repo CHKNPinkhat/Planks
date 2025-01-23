@@ -17,6 +17,10 @@ _G.CircleRadius = 80 -- The radius of the circle / FOV.
 _G.CircleFilled = false -- Determines whether or not the circle is filled.
 _G.CircleThickness = 0 -- The thickness of the circle.
 
+if _G.AimbotEnabled = false then
+FOVCircle.Destroy()
+end
+
 if _G.AimbotEnabled = true then
 local FOVCircle = Drawing.new("Circle")
 FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
@@ -28,9 +32,6 @@ FOVCircle.Radius = _G.CircleRadius
 FOVCircle.Transparency = _G.CircleTransparency
 FOVCircle.NumSides = _G.CircleSides
 FOVCircle.Thickness = _G.CircleThickness
-else
-FOVCIRCLE.Destroy()
-end
 
 local function GetClosestPlayer()
 	local MaximumDistance = _G.CircleRadius
