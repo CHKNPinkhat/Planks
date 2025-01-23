@@ -16,7 +16,7 @@ _G.CircleTransparency = 0.7 -- Transparency of the circle.
 _G.CircleRadius = 35 -- The radius of the circle / FOV.
 _G.CircleFilled = false -- Determines whether or not the circle is filled.
 _G.CircleVisible = true -- Determines whether or not the circle is visible.
-_G.CircleThickness = 0.15 -- The thickness of the circle.
+_G.CircleThickness = 0 -- The thickness of the circle.
 
 local FOVCircle = Drawing.new("Circle")
 FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
