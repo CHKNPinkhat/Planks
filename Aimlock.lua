@@ -29,7 +29,7 @@ FOVCircle.Transparency = _G.CircleTransparency
 FOVCircle.NumSides = _G.CircleSides
 FOVCircle.Thickness = _G.CircleThickness
 else
-FOVCIRCLE.Destroy()
+FOVCircle.Destroy()
 end
 
 local function GetClosestPlayer()
